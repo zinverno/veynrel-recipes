@@ -1,0 +1,475 @@
+{
+  "source": "c1a50735c6b0ad298b5ec0567cf0de6a1df6aef0",
+  "baseline": "de81435af99ea3485270d792352a024794f82f63",
+  "catalogTreeUnchanged": "fa5a56fa60d88d0c8c796b5e8b24ae9dc5df271b",
+  "tests": {
+    "passed": 29,
+    "failed": 0,
+    "new": 21,
+    "existing": 8
+  },
+  "initialRegression": {
+    "baseline": "de81435af99ea3485270d792352a024794f82f63",
+    "failedAsExpected": 12
+  },
+  "cli": {
+    "status": "PASS",
+    "exitCode": 1,
+    "error": "Invalid resource: site/style.css",
+    "previousDistUnchanged": true,
+    "fixture": "symlink to a catalog Recipe inside a disposable checkout"
+  },
+  "localBrowser": {
+    "status": "PASS",
+    "url": "http://127.0.0.1:35329/veynrel-recipes/",
+    "checks": [
+      "Eight real static recipe links are rendered",
+      "Search matches Russian tags",
+      "Work category contains two recipes",
+      "dark/1200: no horizontal overflow",
+      "dark/390: no horizontal overflow",
+      "light/1200: no horizontal overflow",
+      "light/390: no horizontal overflow",
+      "Static detail exposes full instruction, examples, author, version and hash",
+      "Detail has no horizontal overflow at narrow width",
+      "Recipe JSON download matches identity",
+      "Accessible heading and download link are exposed",
+      "Submission path links to fork and pull request",
+      "No browser errors; website serves only GET static resources"
+    ],
+    "errors": [],
+    "browserRequests": [
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/style.css",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/search.js",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/icon.svg",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/recipes/lecture-outline/1.0.0/",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/style.css",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/search.js",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/contribute/",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/style.css",
+        "method": "GET",
+        "hasBody": false
+      },
+      {
+        "url": "http://127.0.0.1:35329/veynrel-recipes/search.js",
+        "method": "GET",
+        "hasBody": false
+      }
+    ]
+  },
+  "actions": [
+    {
+      "conclusion": "success",
+      "headSha": "c1a50735c6b0ad298b5ec0567cf0de6a1df6aef0",
+      "jobs": [
+        {
+          "completedAt": "2026-10-27T12:05:42Z",
+          "conclusion": "success",
+          "databaseId": 122178530342,
+          "name": "validate",
+          "startedAt": "2026-10-27T12:05:33Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T12:05:34Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T12:05:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:36Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T12:05:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:36Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "startedAt": "2026-10-27T12:05:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:38Z",
+              "conclusion": "success",
+              "name": "Run npm test",
+              "number": 4,
+              "startedAt": "2026-10-27T12:05:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:39Z",
+              "conclusion": "success",
+              "name": "Run npm run validate",
+              "number": 5,
+              "startedAt": "2026-10-27T12:05:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:39Z",
+              "conclusion": "success",
+              "name": "Check the last reserved publication",
+              "number": 6,
+              "startedAt": "2026-10-27T12:05:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:39Z",
+              "conclusion": "success",
+              "name": "Run npm run build",
+              "number": 7,
+              "startedAt": "2026-10-27T12:05:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:39Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 13,
+              "startedAt": "2026-10-27T12:05:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:39Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 14,
+              "startedAt": "2026-10-27T12:05:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:40Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 15,
+              "startedAt": "2026-10-27T12:05:39Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zinverno/veynrel-recipes/actions/runs/40501052731/job/122178530342"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/zinverno/veynrel-recipes/actions/runs/40501052731"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "c1a50735c6b0ad298b5ec0567cf0de6a1df6aef0",
+      "jobs": [
+        {
+          "completedAt": "2026-10-27T12:05:56Z",
+          "conclusion": "success",
+          "databaseId": 122178631840,
+          "name": "build",
+          "startedAt": "2026-10-27T12:05:46Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T12:05:48Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T12:05:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:49Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-10-27T12:05:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:49Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "startedAt": "2026-10-27T12:05:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:50Z",
+              "conclusion": "success",
+              "name": "Run npm test",
+              "number": 4,
+              "startedAt": "2026-10-27T12:05:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:51Z",
+              "conclusion": "success",
+              "name": "Enforce immutable published versions",
+              "number": 5,
+              "startedAt": "2026-10-27T12:05:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:51Z",
+              "conclusion": "success",
+              "name": "Run npm run build",
+              "number": 6,
+              "startedAt": "2026-10-27T12:05:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:52Z",
+              "conclusion": "success",
+              "name": "Reserve immutable publication baseline before deployment",
+              "number": 7,
+              "startedAt": "2026-10-27T12:05:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:53Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b",
+              "number": 8,
+              "startedAt": "2026-10-27T12:05:52Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:53Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 15,
+              "startedAt": "2026-10-27T12:05:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:53Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 16,
+              "startedAt": "2026-10-27T12:05:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:05:54Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-27T12:05:53Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zinverno/veynrel-recipes/actions/runs/40501082351/job/122178631840"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:10Z",
+          "conclusion": "success",
+          "databaseId": 122178722481,
+          "name": "deploy",
+          "startedAt": "2026-10-27T12:06:00Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-27T12:06:02Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-27T12:06:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:06:08Z",
+              "conclusion": "success",
+              "name": "Run actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e",
+              "number": 2,
+              "startedAt": "2026-10-27T12:06:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-27T12:06:08Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 3,
+              "startedAt": "2026-10-27T12:06:08Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zinverno/veynrel-recipes/actions/runs/40501082351/job/122178722481"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/zinverno/veynrel-recipes/actions/runs/40501082351"
+    }
+  ],
+  "publication": {
+    "previous": "130a94c1ce6203773c3bfa1db871031136748b20",
+    "checkpoint": "2ee56b1cf7bb12d2909fb2380ee7421e8259e1de",
+    "singleParentMatchesPrevious": true,
+    "treeMatchesSource": true
+  },
+  "publicOutputAfterDeployment": {
+    "status": "PASS",
+    "base": "https://zinverno.github.io/veynrel-recipes/",
+    "checkedAt": "2026-10-27T12:07:03.675Z",
+    "resources": [
+      {
+        "resource": "icon.svg",
+        "status": 200,
+        "sha256": "9ddf93ebe8f3d8f6d0b8b4df398d9cd55e94d3cd1ba46b81a2b52d55adccb155"
+      },
+      {
+        "resource": "index.html",
+        "status": 200,
+        "sha256": "44cae6987393cbd2b9e6e1c4c3cd59f0d014e12e6d3715ee34bedc71209b4f0c"
+      },
+      {
+        "resource": "robots.txt",
+        "status": 200,
+        "sha256": "395eec3ff1375378321c32a90645517cd3895a89190ab834d3ed801700ff78af"
+      },
+      {
+        "resource": "search.js",
+        "status": 200,
+        "sha256": "b74fb039db30779632eabd539f6e2c7f0a75985950c6b75791af7151b1b63a5b"
+      },
+      {
+        "resource": "sitemap.xml",
+        "status": 200,
+        "sha256": "24a3caacb700ffba1ea1878ea1faa5541aab5a071302abf0b52f04c4d168a07a"
+      },
+      {
+        "resource": "style.css",
+        "status": 200,
+        "sha256": "b5989214106174f2401a7335a018dadf96157d04e116ee65cf0a7f6494e2486e"
+      },
+      {
+        "resource": "recipes/technical-note/1.0.0/index.html",
+        "status": 200,
+        "sha256": "8a7780c53b2a421db0e000ecf581cea8bd6bb71df497b29395789157a18d0ad0"
+      },
+      {
+        "resource": "recipes/study-material/1.0.0/index.html",
+        "status": 200,
+        "sha256": "c1b398fd2ad1289df6841bb766701856423e46e926738d137e68ec5d93a4d9dd"
+      },
+      {
+        "resource": "recipes/meeting-structure/1.0.0/index.html",
+        "status": 200,
+        "sha256": "182868fb5ddbbb0c6f828571a38ee92e2e3e8e1eabf1a7d389359bec0e1fa44e"
+      },
+      {
+        "resource": "recipes/lecture-outline/1.0.0/index.html",
+        "status": 200,
+        "sha256": "a8ec66e3730277fd801dd9795880ac1d93dc8a8eea92e185263873b1611da2ae"
+      },
+      {
+        "resource": "recipes/learning-journal/1.0.0/index.html",
+        "status": 200,
+        "sha256": "c67829b7e2cdd67247e8226c68cbd371459a67ffd0b1f97350b117a518681154"
+      },
+      {
+        "resource": "recipes/extract-actions/1.0.0/index.html",
+        "status": 200,
+        "sha256": "9687d7172e7d5ab350bc414c30fec4f20553bad0c174dad382465b54be4091df"
+      },
+      {
+        "resource": "recipes/daily-note/1.0.0/index.html",
+        "status": 200,
+        "sha256": "c70b27882fcdca483e0393f5d9672ef4fbe0714e3723da50a436cf940a925356"
+      },
+      {
+        "resource": "recipes/article-summary/1.0.0/index.html",
+        "status": 200,
+        "sha256": "b3cd902acd63b871e9fc32401198f45629bfa96bedfc72b8f99bc3041859daf9"
+      },
+      {
+        "resource": "install/index.html",
+        "status": 200,
+        "sha256": "79952a8341f61c09d308e87d33d8376cfe1fe73b739d619f39f1a4cb1eb9784e"
+      },
+      {
+        "resource": "contribute/index.html",
+        "status": 200,
+        "sha256": "f027c36d80fab87d09b0a9335ac9a2335e0fc9305d349dcc7e912612728a65d4"
+      },
+      {
+        "resource": "catalog/v1/index.json",
+        "status": 200,
+        "sha256": "81945bc1c7f40cfd22c8afac28b5df9e8cc60f05bdc90f532f137d4e5f9e3b90"
+      },
+      {
+        "resource": "catalog/v1/recipes/technical-note/1.0.0.json",
+        "status": 200,
+        "sha256": "dffa82b5cb7eb47734ae8790269f695ee052885bf74c20ef92fbe5f0b2b630e9"
+      },
+      {
+        "resource": "catalog/v1/recipes/study-material/1.0.0.json",
+        "status": 200,
+        "sha256": "eb82aee19c291a38851f4eea0d2030bc31da7ee2c865f81712b86ae3144d5ecf"
+      },
+      {
+        "resource": "catalog/v1/recipes/meeting-structure/1.0.0.json",
+        "status": 200,
+        "sha256": "81c3fcd873322376b73af56fdde8e22088edf5d6a22f1df8d510d94b60b453f4"
+      },
+      {
+        "resource": "catalog/v1/recipes/lecture-outline/1.0.0.json",
+        "status": 200,
+        "sha256": "fb3a26f671f4061529147955d046890330f225526a65fd9dceef2e46c2f4b3b2"
+      },
+      {
+        "resource": "catalog/v1/recipes/learning-journal/1.0.0.json",
+        "status": 200,
+        "sha256": "1387aafe7d08503d34e94dfac4bb7a9bd386b1e846f5ac90c4f2239998f1d892"
+      },
+      {
+        "resource": "catalog/v1/recipes/extract-actions/1.0.0.json",
+        "status": 200,
+        "sha256": "ffa8973960359469cf62561a132aacb7cf980209439d106c64c7dc1e2a2a3ee5"
+      },
+      {
+        "resource": "catalog/v1/recipes/daily-note/1.0.0.json",
+        "status": 200,
+        "sha256": "4da38e800979f4a994e9b1a74481347b922717790fd035779265113b5ae61301"
+      },
+      {
+        "resource": "catalog/v1/recipes/article-summary/1.0.0.json",
+        "status": 200,
+        "sha256": "4674980faa971393bd1615fa7b9d8d17a1b23fffd351c0fab6b2e57ca6f7b606"
+      }
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 # Public website evidence
 
+Latest follow-up: [static asset hardening](asset-hardening.md) — 29 passing tests, pre-output refusal of unsafe assets, audited output paths, successful CI/deployment and checkpoint protection instructions. The initial website/native evidence below is preserved as recorded.
+
 Published website https://zinverno.github.io/veynrel-recipes/ passed **13 browser checks** in isolated Chromium: real static pages, RU/EN search, categories, JSON download, contribution links, accessible heading, dark/light and 1200/390 px layouts. **Zero browser errors.** Recorded browser requests are bodyless GETs to the site origin only. See [raw report](browser-public.json), screenshots and [checksums](SHA256SUMS).
 
 Deployment [40441180389](https://github.com/zinverno/veynrel-recipes/actions/runs/40441180389) succeeded from `a29a537815d5ca2f0ba5b28e6066823eb8873204`. The initially rejected deployment was caused by the automatically created environment policy allowing only main; the exact implementation branch was added, preserving the existing policy. No PR was merged.

@@ -1,0 +1,49 @@
+{
+  "id": "daily-note",
+  "version": "1.0.0",
+  "name": {
+    "en": "Reshape a daily note",
+    "ru": "Упорядочить ежедневную заметку"
+  },
+  "description": {
+    "en": "Group events, observations, completed work and future plans while keeping ambiguity.",
+    "ru": "Сгруппируйте события, наблюдения, выполненное и планы, сохраняя неопределённость."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "daily",
+  "tags": [
+    "daily",
+    "reflection",
+    "дневник"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A clearer daily record without invented personal interpretation.",
+    "ru": "Более ясная запись дня без выдуманных личных интерпретаций."
+  },
+  "operations": [
+    "replace"
+  ],
+  "limitations": {
+    "en": "The model can overinterpret short personal phrases. Inspect every rephrasing and preserve details you need.",
+    "ru": "Модель может чрезмерно интерпретировать короткие личные фразы. Проверьте перефразирование и сохранность важных деталей."
+  },
+  "examples": {
+    "input": {
+      "en": "Morning: walked to the library. Finished chapter 2. Afternoon was noisy. Maybe continue chapter 3 tomorrow. [[Reading list]]",
+      "ru": "Утром сходил в библиотеку. Закончил главу 2. Днём было шумно. Возможно, завтра продолжу главу 3. [[Список чтения]]"
+    },
+    "output": {
+      "en": "# Daily note\n## Events\nMorning: walked to the library.\n## Completed\nFinished chapter 2.\n## Observation\nAfternoon was noisy.\n## Tentative plan\nMaybe continue chapter 3 tomorrow.\n\n[[Reading list]]",
+      "ru": "# Ежедневная заметка\n## События\nУтром сходил в библиотеку.\n## Выполнено\nЗакончил главу 2.\n## Наблюдение\nДнём было шумно.\n## Предварительный план\nВозможно, завтра продолжить главу 3.\n\n[[Список чтения]]"
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/daily-note/1.0.0.json",
+  "sha256": "4da38e800979f4a994e9b1a74481347b922717790fd035779265113b5ae61301"
+}

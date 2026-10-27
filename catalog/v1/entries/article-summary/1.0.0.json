@@ -1,0 +1,49 @@
+{
+  "id": "article-summary",
+  "version": "1.0.0",
+  "name": {
+    "en": "Article summary",
+    "ru": "Краткое изложение статьи"
+  },
+  "description": {
+    "en": "Summarize the supplied article excerpt and preserve caveats and attribution.",
+    "ru": "Кратко изложите переданный фрагмент статьи, сохраняя оговорки и авторство."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "writing",
+  "tags": [
+    "article",
+    "summary",
+    "статья"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A source-bounded reading summary for later review.",
+    "ru": "Краткая запись прочитанного в границах предоставленного источника."
+  },
+  "operations": [
+    "replace"
+  ],
+  "limitations": {
+    "en": "Summaries can omit exceptions or distort emphasis. Compare important claims to the source; the model does not fact-check the article.",
+    "ru": "Пересказ может пропустить исключения или сместить акценты. Сверяйте важные утверждения с исходником; модель не проверяет истинность статьи."
+  },
+  "examples": {
+    "input": {
+      "en": "Fictional article excerpt: A school trial used paper planning cards in two classes for one week. Teachers reported easier lesson starts. The author notes there was no control group and no measured learning outcome.",
+      "ru": "Фрагмент вымышленной статьи: В двух классах неделю пробовали бумажные карточки планирования. Учителя сообщили, что стало проще начинать урок. Автор отмечает отсутствие контрольной группы и измерений учебного результата."
+    },
+    "output": {
+      "en": "## Summary\n- The excerpt describes a one-week planning-card trial in two classes.\n- Teachers reported easier lesson starts.\n- No learning outcome was measured.\n## Caveats\nNo control group; the report does not establish improved learning.\n## Missing context\nOnly an excerpt was provided.",
+      "ru": "## Краткое изложение\n- Во фрагменте описана недельная проба карточек в двух классах.\n- Учителя сообщили об облегчении начала урока.\n- Учебный результат не измерялся.\n## Оговорки\nКонтрольной группы нет; улучшение обучения не доказано.\n## Недостающий контекст\nПредоставлен только фрагмент."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/article-summary/1.0.0.json",
+  "sha256": "4674980faa971393bd1615fa7b9d8d17a1b23fffd351c0fab6b2e57ca6f7b606"
+}

@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "lecture-outline",
+      "version": "1.0.0",
+      "name": {
+        "en": "Lecture outline",
+        "ru": "Конспект лекции"
+      },
+      "description": {
+        "en": "Turn rough lecture notes into an outline with definitions and open questions.",
+        "ru": "Превратите черновик лекции в план с определениями и открытыми вопросами."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "learning",
+      "tags": [
+        "lecture",
+        "study",
+        "лекция"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "An outline for reviewing a lecture without filling gaps from model memory.",
+        "ru": "План для повторения лекции без заполнения пробелов знаниями модели."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "Misheard terms may remain wrong. Check formulas and definitions against the lecture; omitted material cannot be recovered.",
+        "ru": "Ошибочно записанные термины могут остаться неверными. Сверяйте формулы и определения с лекцией; пропуски нельзя восстановить."
+      },
+      "examples": {
+        "input": {
+          "en": "Topic: caching. Cache hit: requested item is in cache. TTL sets time to live. Example: weather data cached 5 min. Didn't record eviction policies.",
+          "ru": "Тема: кеширование. Cache hit — нужный элемент есть в кеше. TTL задаёт время жизни. Пример: погода кешируется 5 минут. Политики вытеснения не записал."
+        },
+        "output": {
+          "en": "# Caching\n## Key ideas\n- A cache hit means the requested item is in the cache.\n- TTL sets time to live.\n## Example from the source\nWeather data cached for 5 minutes.\n## Open questions\nEviction policies were not recorded.",
+          "ru": "# Кеширование\n## Основные идеи\n- Cache hit: нужный элемент есть в кеше.\n- TTL задаёт время жизни.\n## Пример из источника\nПогода кешируется на 5 минут.\n## Открытые вопросы\nПолитики вытеснения не записаны."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/lecture-outline/1.0.0.json",
+      "sha256": "fb3a26f671f4061529147955d046890330f225526a65fd9dceef2e46c2f4b3b2"
+    },
+    {
+      "id": "meeting-structure",
+      "version": "1.0.0",
+      "name": {
+        "en": "Meeting structure",
+        "ru": "Структура встречи"
+      },
+      "description": {
+        "en": "Separate discussion, decisions, actions and unresolved questions.",
+        "ru": "Разделите обсуждение, решения, действия и нерешённые вопросы."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "work",
+      "tags": [
+        "meeting",
+        "decisions",
+        "встреча"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A readable record of what was actually agreed at a meeting.",
+        "ru": "Читаемая запись того, о чём действительно договорились на встрече."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "The model may mistake proposals for commitments or confuse speakers. Verify each decision, owner and due date.",
+        "ru": "Модель может принять предложение за обязательство или перепутать участников. Проверьте решения, ответственных и сроки."
+      },
+      "examples": {
+        "input": {
+          "en": "Demo planning. Mira suggested Friday; no agreement. Team agreed to show the search flow. Leon will prepare sample queries. No deadline recorded. Offline demo still undecided.",
+          "ru": "Планирование демо. Мира предложила пятницу, не согласовали. Команда решила показать поиск. Леон подготовит примеры запросов. Срок не записан. Офлайн-демо пока под вопросом."
+        },
+        "output": {
+          "en": "# Demo planning\n## Decision\nShow the search flow.\n## Action\n- [ ] Prepare sample queries — Leon; due date unknown.\n## Discussion\nMira suggested Friday; not agreed.\n## Open question\nOffline demo remains undecided.",
+          "ru": "# Планирование демо\n## Решение\nПоказать поиск.\n## Действие\n- [ ] Подготовить примеры запросов — Леон; срок неизвестен.\n## Обсуждение\nМира предложила пятницу; решение не принято.\n## Открытый вопрос\nОфлайн-демо пока не согласовано."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/meeting-structure/1.0.0.json",
+      "sha256": "81c3fcd873322376b73af56fdde8e22088edf5d6a22f1df8d510d94b60b453f4"
+    },
+    {
+      "id": "learning-journal",
+      "version": "1.0.0",
+      "name": {
+        "en": "Learning journal",
+        "ru": "Дневник обучения"
+      },
+      "description": {
+        "en": "Record studied material, practice, difficulties and explicitly planned next steps.",
+        "ru": "Зафиксируйте изученное, практику, трудности и явно намеченные шаги."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "learning",
+      "tags": [
+        "reflection",
+        "practice",
+        "обучение"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A reflection template grounded in the learner's own observations.",
+        "ru": "Шаблон рефлексии на основе собственных наблюдений учащегося."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "Self-report is incomplete. This is not an assessment of competence; verify that plans are not marked completed.",
+        "ru": "Самоотчёт неполон. Это не оценка компетентности; проверьте, что планы не отмечены выполненными."
+      },
+      "examples": {
+        "input": {
+          "en": "Read about SQL joins. Tried two INNER JOIN queries; second gave duplicate rows. I can explain matching keys. Tomorrow: inspect one-to-many relationships.",
+          "ru": "Читал о JOIN в SQL. Попробовал два INNER JOIN; второй вернул дубли. Могу объяснить сопоставление ключей. Завтра: разобрать связи один-ко-многим."
+        },
+        "output": {
+          "en": "# Learning entry\n## Studied\nSQL joins.\n## Practiced\nTwo INNER JOIN queries; the second returned duplicate rows.\n## Self-observation\nCan explain matching keys.\n## Difficulty\nUnexpected duplicate rows.\n## Planned next step\nInspect one-to-many relationships tomorrow.",
+          "ru": "# Запись об обучении\n## Изучено\nJOIN в SQL.\n## Практика\nДва INNER JOIN; второй вернул дубли.\n## Самонаблюдение\nМогу объяснить сопоставление ключей.\n## Трудность\nНеожиданные дубли.\n## Следующий шаг\nЗавтра разобрать связи один-ко-многим."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/learning-journal/1.0.0.json",
+      "sha256": "1387aafe7d08503d34e94dfac4bb7a9bd386b1e846f5ac90c4f2239998f1d892"
+    },
+    {
+      "id": "extract-actions",
+      "version": "1.0.0",
+      "name": {
+        "en": "Extract explicit actions",
+        "ru": "Извлечь явные задачи"
+      },
+      "description": {
+        "en": "Append a checklist of explicitly stated actions without turning ideas into commitments.",
+        "ru": "Добавьте список явно указанных действий, не превращая идеи в обязательства."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "work",
+      "tags": [
+        "tasks",
+        "actions",
+        "задачи"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A small checklist appended to a mixed working note.",
+        "ru": "Небольшой список задач в конце смешанной рабочей заметки."
+      },
+      "operations": [
+        "append"
+      ],
+      "limitations": {
+        "en": "Ambiguous commitments need human review. Repeated runs can append repeated checklists; inspect Review before Apply.",
+        "ru": "Неоднозначные обязательства требуют проверки. Повторный запуск может добавить повторный список; изучите Review перед Apply."
+      },
+      "examples": {
+        "input": {
+          "en": "I sent the draft. I will check the links on Thursday. Maybe we should redesign the header someday. Nika agreed to ask the editor; no date.",
+          "ru": "Черновик отправлен. В четверг проверю ссылки. Возможно, когда-нибудь переделаем шапку. Ника согласилась спросить редактора; даты нет."
+        },
+        "output": {
+          "en": "## Explicit actions\n- [ ] Check the links on Thursday — author.\n- [ ] Ask the editor — Nika; no date specified.",
+          "ru": "## Явные задачи\n- [ ] Проверить ссылки в четверг — автор.\n- [ ] Спросить редактора — Ника; дата не указана."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/extract-actions/1.0.0.json",
+      "sha256": "ffa8973960359469cf62561a132aacb7cf980209439d106c64c7dc1e2a2a3ee5"
+    },
+    {
+      "id": "technical-note",
+      "version": "1.0.0",
+      "name": {
+        "en": "Organize technical notes",
+        "ru": "Упорядочить технические заметки"
+      },
+      "description": {
+        "en": "Separate observed behavior, environment, hypotheses and verified steps.",
+        "ru": "Разделите наблюдения, окружение, гипотезы и проверенные шаги."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "knowledge",
+      "tags": [
+        "technical",
+        "debugging",
+        "техника"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A troubleshooting note with clear evidence boundaries.",
+        "ru": "Заметка об отладке с явным разделением фактов и предположений."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "Formatting may damage code or separate errors from context. Compare code and exact error strings in the diff. No commands are executed.",
+        "ru": "Форматирование может повредить код или оторвать ошибку от контекста. Сверьте код и точный текст ошибок в diff. Команды не исполняются."
+      },
+      "examples": {
+        "input": {
+          "en": "Toy service v0.3. On second request: E_BUSY. First request succeeds. Suspect the lock is not released; not checked. Steps: start toy service, send two requests. Need inspect lock cleanup.",
+          "ru": "Учебный сервис v0.3. Второй запрос: E_BUSY. Первый успешен. Подозреваю, что блокировка не снята; не проверял. Шаги: запустить сервис, отправить два запроса. Нужно проверить очистку блокировки."
+        },
+        "output": {
+          "en": "# Technical note\n## Environment\nToy service v0.3.\n## Reproduction\nStart toy service; send two requests.\n## Observations\nFirst request succeeds. Second returns E_BUSY.\n## Hypothesis — unverified\nLock may not be released.\n## Next check\nInspect lock cleanup.",
+          "ru": "# Техническая заметка\n## Окружение\nУчебный сервис v0.3.\n## Воспроизведение\nЗапустить сервис; отправить два запроса.\n## Наблюдения\nПервый запрос успешен. Второй возвращает E_BUSY.\n## Гипотеза — не проверена\nВозможно, блокировка не снята.\n## Следующая проверка\nОчистка блокировки."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/technical-note/1.0.0.json",
+      "sha256": "dffa82b5cb7eb47734ae8790269f695ee052885bf74c20ef92fbe5f0b2b630e9"
+    },
+    {
+      "id": "article-summary",
+      "version": "1.0.0",
+      "name": {
+        "en": "Article summary",
+        "ru": "Краткое изложение статьи"
+      },
+      "description": {
+        "en": "Summarize the supplied article excerpt and preserve caveats and attribution.",
+        "ru": "Кратко изложите переданный фрагмент статьи, сохраняя оговорки и авторство."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "writing",
+      "tags": [
+        "article",
+        "summary",
+        "статья"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A source-bounded reading summary for later review.",
+        "ru": "Краткая запись прочитанного в границах предоставленного источника."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "Summaries can omit exceptions or distort emphasis. Compare important claims to the source; the model does not fact-check the article.",
+        "ru": "Пересказ может пропустить исключения или сместить акценты. Сверяйте важные утверждения с исходником; модель не проверяет истинность статьи."
+      },
+      "examples": {
+        "input": {
+          "en": "Fictional article excerpt: A school trial used paper planning cards in two classes for one week. Teachers reported easier lesson starts. The author notes there was no control group and no measured learning outcome.",
+          "ru": "Фрагмент вымышленной статьи: В двух классах неделю пробовали бумажные карточки планирования. Учителя сообщили, что стало проще начинать урок. Автор отмечает отсутствие контрольной группы и измерений учебного результата."
+        },
+        "output": {
+          "en": "## Summary\n- The excerpt describes a one-week planning-card trial in two classes.\n- Teachers reported easier lesson starts.\n- No learning outcome was measured.\n## Caveats\nNo control group; the report does not establish improved learning.\n## Missing context\nOnly an excerpt was provided.",
+          "ru": "## Краткое изложение\n- Во фрагменте описана недельная проба карточек в двух классах.\n- Учителя сообщили об облегчении начала урока.\n- Учебный результат не измерялся.\n## Оговорки\nКонтрольной группы нет; улучшение обучения не доказано.\n## Недостающий контекст\nПредоставлен только фрагмент."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/article-summary/1.0.0.json",
+      "sha256": "4674980faa971393bd1615fa7b9d8d17a1b23fffd351c0fab6b2e57ca6f7b606"
+    },
+    {
+      "id": "daily-note",
+      "version": "1.0.0",
+      "name": {
+        "en": "Reshape a daily note",
+        "ru": "Упорядочить ежедневную заметку"
+      },
+      "description": {
+        "en": "Group events, observations, completed work and future plans while keeping ambiguity.",
+        "ru": "Сгруппируйте события, наблюдения, выполненное и планы, сохраняя неопределённость."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "daily",
+      "tags": [
+        "daily",
+        "reflection",
+        "дневник"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "A clearer daily record without invented personal interpretation.",
+        "ru": "Более ясная запись дня без выдуманных личных интерпретаций."
+      },
+      "operations": [
+        "replace"
+      ],
+      "limitations": {
+        "en": "The model can overinterpret short personal phrases. Inspect every rephrasing and preserve details you need.",
+        "ru": "Модель может чрезмерно интерпретировать короткие личные фразы. Проверьте перефразирование и сохранность важных деталей."
+      },
+      "examples": {
+        "input": {
+          "en": "Morning: walked to the library. Finished chapter 2. Afternoon was noisy. Maybe continue chapter 3 tomorrow. [[Reading list]]",
+          "ru": "Утром сходил в библиотеку. Закончил главу 2. Днём было шумно. Возможно, завтра продолжу главу 3. [[Список чтения]]"
+        },
+        "output": {
+          "en": "# Daily note\n## Events\nMorning: walked to the library.\n## Completed\nFinished chapter 2.\n## Observation\nAfternoon was noisy.\n## Tentative plan\nMaybe continue chapter 3 tomorrow.\n\n[[Reading list]]",
+          "ru": "# Ежедневная заметка\n## События\nУтром сходил в библиотеку.\n## Выполнено\nЗакончил главу 2.\n## Наблюдение\nДнём было шумно.\n## Предварительный план\nВозможно, завтра продолжить главу 3.\n\n[[Список чтения]]"
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/daily-note/1.0.0.json",
+      "sha256": "4da38e800979f4a994e9b1a74481347b922717790fd035779265113b5ae61301"
+    },
+    {
+      "id": "study-material",
+      "version": "1.0.0",
+      "name": {
+        "en": "Prepare study material",
+        "ru": "Подготовить учебный материал"
+      },
+      "description": {
+        "en": "Append short recall questions and answers supported by the supplied material.",
+        "ru": "Добавьте вопросы для повторения и ответы, подтверждённые исходным материалом."
+      },
+      "author": {
+        "name": "Zinverno Labs",
+        "url": "https://github.com/zinverno"
+      },
+      "category": "learning",
+      "tags": [
+        "questions",
+        "revision",
+        "повторение"
+      ],
+      "compatibility": {
+        "recipeSchema": 1,
+        "studioApi": 1
+      },
+      "purpose": {
+        "en": "Self-check prompts for revisiting material already in a note.",
+        "ru": "Вопросы для самостоятельного повторения материала заметки."
+      },
+      "operations": [
+        "append"
+      ],
+      "limitations": {
+        "en": "A fluent question can still have an unsupported answer. Verify each pair. This is plain Markdown, not an automated flashcard import.",
+        "ru": "Убедительный вопрос может сопровождаться неподтверждённым ответом. Проверьте каждую пару. Это обычный Markdown, не автоматический импорт карточек."
+      },
+      "examples": {
+        "input": {
+          "en": "A queue is FIFO: first in, first out. Enqueue adds an item. Dequeue removes the oldest item. Empty-queue behavior is not described here.",
+          "ru": "Очередь работает по FIFO: первым пришёл — первым вышел. Enqueue добавляет элемент. Dequeue удаляет самый старый элемент. Поведение пустой очереди здесь не описано."
+        },
+        "output": {
+          "en": "## Study questions\n1. What does FIFO mean? — First in, first out.\n2. What does enqueue do? — Adds an item.\n3. What does dequeue remove? — The oldest item.\n## Gap\nEmpty-queue behavior is not covered in the source.",
+          "ru": "## Вопросы для повторения\n1. Что означает FIFO? — Первым пришёл — первым вышел.\n2. Что делает enqueue? — Добавляет элемент.\n3. Что удаляет dequeue? — Самый старый элемент.\n## Пробел\nПоведение пустой очереди в источнике не описано."
+        }
+      },
+      "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/study-material/1.0.0.json",
+      "sha256": "eb82aee19c291a38851f4eea0d2030bc31da7ee2c865f81712b86ae3144d5ecf"
+    }
+  ]
+}

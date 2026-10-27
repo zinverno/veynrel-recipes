@@ -1,0 +1,12 @@
+{
+  "name": "veynrel-recipes",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "validate": "node scripts/validate-catalog.mjs",
+    "build": "node scripts/build-site.mjs",
+    "test": "node --test scripts/*.test.mjs"
+  }
+}

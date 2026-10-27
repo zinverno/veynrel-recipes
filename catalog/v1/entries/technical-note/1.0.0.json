@@ -1,0 +1,49 @@
+{
+  "id": "technical-note",
+  "version": "1.0.0",
+  "name": {
+    "en": "Organize technical notes",
+    "ru": "Упорядочить технические заметки"
+  },
+  "description": {
+    "en": "Separate observed behavior, environment, hypotheses and verified steps.",
+    "ru": "Разделите наблюдения, окружение, гипотезы и проверенные шаги."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "knowledge",
+  "tags": [
+    "technical",
+    "debugging",
+    "техника"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A troubleshooting note with clear evidence boundaries.",
+    "ru": "Заметка об отладке с явным разделением фактов и предположений."
+  },
+  "operations": [
+    "replace"
+  ],
+  "limitations": {
+    "en": "Formatting may damage code or separate errors from context. Compare code and exact error strings in the diff. No commands are executed.",
+    "ru": "Форматирование может повредить код или оторвать ошибку от контекста. Сверьте код и точный текст ошибок в diff. Команды не исполняются."
+  },
+  "examples": {
+    "input": {
+      "en": "Toy service v0.3. On second request: E_BUSY. First request succeeds. Suspect the lock is not released; not checked. Steps: start toy service, send two requests. Need inspect lock cleanup.",
+      "ru": "Учебный сервис v0.3. Второй запрос: E_BUSY. Первый успешен. Подозреваю, что блокировка не снята; не проверял. Шаги: запустить сервис, отправить два запроса. Нужно проверить очистку блокировки."
+    },
+    "output": {
+      "en": "# Technical note\n## Environment\nToy service v0.3.\n## Reproduction\nStart toy service; send two requests.\n## Observations\nFirst request succeeds. Second returns E_BUSY.\n## Hypothesis — unverified\nLock may not be released.\n## Next check\nInspect lock cleanup.",
+      "ru": "# Техническая заметка\n## Окружение\nУчебный сервис v0.3.\n## Воспроизведение\nЗапустить сервис; отправить два запроса.\n## Наблюдения\nПервый запрос успешен. Второй возвращает E_BUSY.\n## Гипотеза — не проверена\nВозможно, блокировка не снята.\n## Следующая проверка\nОчистка блокировки."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/technical-note/1.0.0.json",
+  "sha256": "dffa82b5cb7eb47734ae8790269f695ee052885bf74c20ef92fbe5f0b2b630e9"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "extract-actions",
+  "version": "1.0.0",
+  "name": {
+    "en": "Extract explicit actions",
+    "ru": "Извлечь явные задачи"
+  },
+  "description": {
+    "en": "Append a checklist of explicitly stated actions without turning ideas into commitments.",
+    "ru": "Добавьте список явно указанных действий, не превращая идеи в обязательства."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "work",
+  "tags": [
+    "tasks",
+    "actions",
+    "задачи"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A small checklist appended to a mixed working note.",
+    "ru": "Небольшой список задач в конце смешанной рабочей заметки."
+  },
+  "operations": [
+    "append"
+  ],
+  "limitations": {
+    "en": "Ambiguous commitments need human review. Repeated runs can append repeated checklists; inspect Review before Apply.",
+    "ru": "Неоднозначные обязательства требуют проверки. Повторный запуск может добавить повторный список; изучите Review перед Apply."
+  },
+  "examples": {
+    "input": {
+      "en": "I sent the draft. I will check the links on Thursday. Maybe we should redesign the header someday. Nika agreed to ask the editor; no date.",
+      "ru": "Черновик отправлен. В четверг проверю ссылки. Возможно, когда-нибудь переделаем шапку. Ника согласилась спросить редактора; даты нет."
+    },
+    "output": {
+      "en": "## Explicit actions\n- [ ] Check the links on Thursday — author.\n- [ ] Ask the editor — Nika; no date specified.",
+      "ru": "## Явные задачи\n- [ ] Проверить ссылки в четверг — автор.\n- [ ] Спросить редактора — Ника; дата не указана."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/extract-actions/1.0.0.json",
+  "sha256": "ffa8973960359469cf62561a132aacb7cf980209439d106c64c7dc1e2a2a3ee5"
+}

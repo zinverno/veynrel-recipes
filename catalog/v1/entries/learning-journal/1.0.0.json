@@ -1,0 +1,49 @@
+{
+  "id": "learning-journal",
+  "version": "1.0.0",
+  "name": {
+    "en": "Learning journal",
+    "ru": "Дневник обучения"
+  },
+  "description": {
+    "en": "Record studied material, practice, difficulties and explicitly planned next steps.",
+    "ru": "Зафиксируйте изученное, практику, трудности и явно намеченные шаги."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "learning",
+  "tags": [
+    "reflection",
+    "practice",
+    "обучение"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A reflection template grounded in the learner's own observations.",
+    "ru": "Шаблон рефлексии на основе собственных наблюдений учащегося."
+  },
+  "operations": [
+    "replace"
+  ],
+  "limitations": {
+    "en": "Self-report is incomplete. This is not an assessment of competence; verify that plans are not marked completed.",
+    "ru": "Самоотчёт неполон. Это не оценка компетентности; проверьте, что планы не отмечены выполненными."
+  },
+  "examples": {
+    "input": {
+      "en": "Read about SQL joins. Tried two INNER JOIN queries; second gave duplicate rows. I can explain matching keys. Tomorrow: inspect one-to-many relationships.",
+      "ru": "Читал о JOIN в SQL. Попробовал два INNER JOIN; второй вернул дубли. Могу объяснить сопоставление ключей. Завтра: разобрать связи один-ко-многим."
+    },
+    "output": {
+      "en": "# Learning entry\n## Studied\nSQL joins.\n## Practiced\nTwo INNER JOIN queries; the second returned duplicate rows.\n## Self-observation\nCan explain matching keys.\n## Difficulty\nUnexpected duplicate rows.\n## Planned next step\nInspect one-to-many relationships tomorrow.",
+      "ru": "# Запись об обучении\n## Изучено\nJOIN в SQL.\n## Практика\nДва INNER JOIN; второй вернул дубли.\n## Самонаблюдение\nМогу объяснить сопоставление ключей.\n## Трудность\nНеожиданные дубли.\n## Следующий шаг\nЗавтра разобрать связи один-ко-многим."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/learning-journal/1.0.0.json",
+  "sha256": "1387aafe7d08503d34e94dfac4bb7a9bd386b1e846f5ac90c4f2239998f1d892"
+}

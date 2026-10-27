@@ -1,6 +1,9 @@
 name: Deploy community
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['catalog/**', 'site/**', 'scripts/**', 'lib/**', '.github/workflows/deploy.yml']
 permissions:
   contents: read
 concurrency:

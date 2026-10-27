@@ -1,0 +1,41 @@
+
+> test
+> node --test scripts/*.test.mjs
+
+✔ static asset style.css: rejects internal symlink before changing dist (61.511025ms)
+✔ static asset style.css: rejects external symlink before changing dist (37.161397ms)
+✔ static asset style.css: rejects missing file before changing dist (36.888355ms)
+✔ static asset style.css: rejects oversized file before changing dist (32.330997ms)
+✔ static asset style.css: rejects directory before changing dist (29.818949ms)
+✔ static asset style.css: rejects FIFO before changing dist (31.349784ms)
+✔ static asset search.js: rejects internal symlink before changing dist (33.663017ms)
+✔ static asset search.js: rejects external symlink before changing dist (29.527212ms)
+✔ static asset search.js: rejects missing file before changing dist (32.144296ms)
+✔ static asset search.js: rejects oversized file before changing dist (30.904688ms)
+✔ static asset search.js: rejects directory before changing dist (31.51862ms)
+✔ static asset search.js: rejects FIFO before changing dist (35.460914ms)
+✔ static asset icon.svg: rejects internal symlink before changing dist (35.738727ms)
+✔ static asset icon.svg: rejects external symlink before changing dist (32.723534ms)
+✔ static asset icon.svg: rejects missing file before changing dist (31.295492ms)
+✔ static asset icon.svg: rejects oversized file before changing dist (31.33208ms)
+✔ static asset icon.svg: rejects directory before changing dist (28.751163ms)
+✔ static asset icon.svg: rejects FIFO before changing dist (32.884747ms)
+✔ static assets: rejects a symlinked site directory before changing dist (23.591504ms)
+✔ static assets: accepts exact size limits and publishes only fixed allowlist (33.595651ms)
+✔ build writes captured assets and Recipe JSON without reopening source files (48.854747ms)
+✔ all public recipes have valid schemas, bilingual examples, hashes and safe operations (32.913581ms)
+✔ invalid fields, versions, paths, types, duplicate IDs/versions and oversized data fail closed (20.08597ms)
+✔ hash mismatches and executable/foreign manifests are refused (24.521931ms)
+✔ multibyte metadata size matches schema and archived entry policy (17.909083ms)
+✔ delisting preserves immutable metadata and cannot reopen an old version for edits (50.045895ms)
+✔ missing files and symlinks cannot escape catalog validation (43.719323ms)
+✔ published bytes and metadata are immutable against a pinned baseline (239.099119ms)
+✔ generated static pages have working internal links and escaped untrusted content (45.187982ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 852.29088

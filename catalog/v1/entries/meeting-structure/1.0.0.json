@@ -1,0 +1,49 @@
+{
+  "id": "meeting-structure",
+  "version": "1.0.0",
+  "name": {
+    "en": "Meeting structure",
+    "ru": "Структура встречи"
+  },
+  "description": {
+    "en": "Separate discussion, decisions, actions and unresolved questions.",
+    "ru": "Разделите обсуждение, решения, действия и нерешённые вопросы."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "work",
+  "tags": [
+    "meeting",
+    "decisions",
+    "встреча"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "A readable record of what was actually agreed at a meeting.",
+    "ru": "Читаемая запись того, о чём действительно договорились на встрече."
+  },
+  "operations": [
+    "replace"
+  ],
+  "limitations": {
+    "en": "The model may mistake proposals for commitments or confuse speakers. Verify each decision, owner and due date.",
+    "ru": "Модель может принять предложение за обязательство или перепутать участников. Проверьте решения, ответственных и сроки."
+  },
+  "examples": {
+    "input": {
+      "en": "Demo planning. Mira suggested Friday; no agreement. Team agreed to show the search flow. Leon will prepare sample queries. No deadline recorded. Offline demo still undecided.",
+      "ru": "Планирование демо. Мира предложила пятницу, не согласовали. Команда решила показать поиск. Леон подготовит примеры запросов. Срок не записан. Офлайн-демо пока под вопросом."
+    },
+    "output": {
+      "en": "# Demo planning\n## Decision\nShow the search flow.\n## Action\n- [ ] Prepare sample queries — Leon; due date unknown.\n## Discussion\nMira suggested Friday; not agreed.\n## Open question\nOffline demo remains undecided.",
+      "ru": "# Планирование демо\n## Решение\nПоказать поиск.\n## Действие\n- [ ] Подготовить примеры запросов — Леон; срок неизвестен.\n## Обсуждение\nМира предложила пятницу; решение не принято.\n## Открытый вопрос\nОфлайн-демо пока не согласовано."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/meeting-structure/1.0.0.json",
+  "sha256": "81c3fcd873322376b73af56fdde8e22088edf5d6a22f1df8d510d94b60b453f4"
+}

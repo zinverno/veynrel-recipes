@@ -1,0 +1,49 @@
+{
+  "id": "study-material",
+  "version": "1.0.0",
+  "name": {
+    "en": "Prepare study material",
+    "ru": "Подготовить учебный материал"
+  },
+  "description": {
+    "en": "Append short recall questions and answers supported by the supplied material.",
+    "ru": "Добавьте вопросы для повторения и ответы, подтверждённые исходным материалом."
+  },
+  "author": {
+    "name": "Zinverno Labs",
+    "url": "https://github.com/zinverno"
+  },
+  "category": "learning",
+  "tags": [
+    "questions",
+    "revision",
+    "повторение"
+  ],
+  "compatibility": {
+    "recipeSchema": 1,
+    "studioApi": 1
+  },
+  "purpose": {
+    "en": "Self-check prompts for revisiting material already in a note.",
+    "ru": "Вопросы для самостоятельного повторения материала заметки."
+  },
+  "operations": [
+    "append"
+  ],
+  "limitations": {
+    "en": "A fluent question can still have an unsupported answer. Verify each pair. This is plain Markdown, not an automated flashcard import.",
+    "ru": "Убедительный вопрос может сопровождаться неподтверждённым ответом. Проверьте каждую пару. Это обычный Markdown, не автоматический импорт карточек."
+  },
+  "examples": {
+    "input": {
+      "en": "A queue is FIFO: first in, first out. Enqueue adds an item. Dequeue removes the oldest item. Empty-queue behavior is not described here.",
+      "ru": "Очередь работает по FIFO: первым пришёл — первым вышел. Enqueue добавляет элемент. Dequeue удаляет самый старый элемент. Поведение пустой очереди здесь не описано."
+    },
+    "output": {
+      "en": "## Study questions\n1. What does FIFO mean? — First in, first out.\n2. What does enqueue do? — Adds an item.\n3. What does dequeue remove? — The oldest item.\n## Gap\nEmpty-queue behavior is not covered in the source.",
+      "ru": "## Вопросы для повторения\n1. Что означает FIFO? — Первым пришёл — первым вышел.\n2. Что делает enqueue? — Добавляет элемент.\n3. Что удаляет dequeue? — Самый старый элемент.\n## Пробел\nПоведение пустой очереди в источнике не описано."
+    }
+  },
+  "recipeUrl": "https://zinverno.github.io/veynrel-recipes/catalog/v1/recipes/study-material/1.0.0.json",
+  "sha256": "eb82aee19c291a38851f4eea0d2030bc31da7ee2c865f81712b86ae3144d5ecf"
+}

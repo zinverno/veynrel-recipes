@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "url": "https://zinverno.github.io/veynrel-recipes/",
+  "checks": [
+    "Eight real static recipe links are rendered",
+    "Search matches Russian tags",
+    "Work category contains two recipes",
+    "dark/1200: no horizontal overflow",
+    "dark/390: no horizontal overflow",
+    "light/1200: no horizontal overflow",
+    "light/390: no horizontal overflow",
+    "Static detail exposes full instruction, examples, author, version and hash",
+    "Detail has no horizontal overflow at narrow width",
+    "Recipe JSON download matches identity",
+    "Accessible heading and download link are exposed",
+    "Submission path links to fork and pull request",
+    "No browser errors; website serves only GET static resources"
+  ],
+  "screenshots": [
+    "catalog-dark-1200.png",
+    "catalog-dark-390.png",
+    "catalog-light-1200.png",
+    "catalog-light-390.png",
+    "detail-light-390.png"
+  ],
+  "errors": [],
+  "requests": [],
+  "browserRequests": [
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/style.css",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/search.js",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/icon.svg",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/recipes/lecture-outline/1.0.0/",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/style.css",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/search.js",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/contribute/",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/style.css",
+      "method": "GET",
+      "hasBody": false
+    },
+    {
+      "url": "https://zinverno.github.io/veynrel-recipes/search.js",
+      "method": "GET",
+      "hasBody": false
+    }
+  ]
+}

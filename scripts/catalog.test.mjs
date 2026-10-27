@@ -33,6 +33,17 @@ test('hash mismatches and executable/foreign manifests are refused', async () =>
     const bad = JSON.stringify({ ...JSON.parse(raw), ...patch }); await assert.rejects(verifyRecipe({ ...e, sha256: await sha256(bad) }, bad));
   }
 });
+test('multibyte metadata size matches schema and archived entry policy', async () => {
+  const { catalog } = await validateCatalog(), e = catalog.entries[0], example = { en: '界'.repeat(6000), ru: '界'.repeat(6000) };
+  assert.throws(() => parseCatalog(JSON.stringify({ schemaVersion: 1, entries: [{ ...e, examples: { input: example, output: example } }] })), /size/);
+});
+test('delisting preserves immutable metadata and cannot reopen an old version for edits', async t => {
+  const root = await fixture(t), idx = path.join(root, 'catalog/v1/index.json'), catalog = JSON.parse(await fs.readFile(idx, 'utf8')), e = catalog.entries[0];
+  await fs.writeFile(idx, JSON.stringify({ schemaVersion: 1, entries: catalog.entries.slice(1) }));
+  await validateCatalog(root);
+  e.purpose.en = 'Attempt to relist edited metadata'; await fs.writeFile(idx, JSON.stringify(catalog));
+  await assert.rejects(validateCatalog(root), /immutable archived metadata/);
+});
 test('missing files and symlinks cannot escape catalog validation', async t => {
   const root = await fixture(t), e = (await validateCatalog(root)).catalog.entries[0], file = path.join(root, recipePath(e));
   await fs.rename(file, file + '.old'); await assert.rejects(validateCatalog(root)); await fs.symlink(file + '.old', file); await assert.rejects(validateCatalog(root));

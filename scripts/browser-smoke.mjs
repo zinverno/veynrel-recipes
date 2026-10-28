@@ -12,7 +12,7 @@ const requests = [], browserRequests = [], errors = [], checks = [], screenshots
 const server = createServer((req, res) => {
   requests.push({ method: req.method, url: req.url });
   if (!req.url.startsWith('/veynrel-recipes/') || req.method !== 'GET') { res.writeHead(404); res.end(); return; }
-  const rel = decodeURIComponent(req.url.slice('/veynrel-recipes/'.length));
+  const rel = decodeURIComponent(new URL(req.url, 'http://localhost').pathname.slice('/veynrel-recipes/'.length));
   if (rel.includes('..') || rel.includes('\\') || rel.includes('?')) { res.writeHead(400); res.end(); return; }
   const file = path.join(ROOT, 'dist', rel === '' || rel.endsWith('/') ? rel + 'index.html' : rel);
   if (!fs.existsSync(file)) { res.writeHead(404); res.end(); return; }
@@ -32,7 +32,7 @@ try{
   let page;for(let i=0;i<150;i++){try{page=(await(await fetch('http://127.0.0.1:9291/json/list')).json()).find(p=>p.type==='page');}catch{}if(page)break;await pause(100);}assert(page);
   socket=new WebSocket(page.webSocketDebuggerUrl);await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
   socket.onmessage=e=>{const m=JSON.parse(e.data);if(m.method==='Network.requestWillBeSent')browserRequests.push({url:m.params.request.url,method:m.params.request.method,hasBody:!!m.params.request.postData});if(m.method==='Runtime.exceptionThrown'||m.method==='Log.entryAdded'&&m.params.entry.level==='error')errors.push(m.params);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}};
-  await cdp('Runtime.enable');await cdp('Log.enable');await cdp('Page.enable');await cdp('Network.enable');await cdp('Page.navigate',{url});await wait("document.readyState==='complete'&&document.querySelector('#results')?.textContent.includes('recipes /')");
+  await cdp('Runtime.enable');await cdp('Log.enable');await cdp('Page.enable');await cdp('Network.enable');await cdp('Page.navigate',{url});await wait("document.readyState==='complete'&&document.querySelector('#results')?.textContent.includes('recipes')");
   await pass('Eight real static recipe links are rendered',"document.querySelectorAll('[data-recipe]').length===8");
   await ev("{const e=document.querySelector('#search');e.focus();e.value='лекция';e.dispatchEvent(new Event('input'))}void 0");await pass('Search matches Russian tags',"document.querySelectorAll('[data-recipe]:not([hidden])').length===1");
   await ev("{const e=document.querySelector('#search');e.value='';e.dispatchEvent(new Event('input'));const c=document.querySelector('#category');c.value='work';c.dispatchEvent(new Event('change'))}void 0");await pass('Work category contains two recipes',"document.querySelectorAll('[data-recipe]:not([hidden])').length===2");
@@ -41,12 +41,18 @@ try{
     await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:theme}]});await cdp('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
     await pass(`${theme}/${width}: no horizontal overflow`, 'document.documentElement.scrollWidth<=innerWidth');await ev("window.scrollTo(0,0);void 0");await shot(`catalog-${theme}-${width}`);
   }
-  await cdp('Page.navigate',{url:url+'recipes/lecture-outline/1.0.0/'});await wait("document.querySelector('h1')?.textContent==='Lecture outline'");
+  await ev("{const l=document.querySelector('#language');l.value='ru';l.dispatchEvent(new Event('change'));}void 0");
+  await pass('Russian switch exposes one language and retains catalog', "document.documentElement.lang==='ru'&&document.querySelector('h1').innerText==='Что сделать с заметкой?'&&document.querySelectorAll('[data-lang=en]:not([hidden])').length===0");await shot('catalog-ru-light-390');
+  await cdp('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});await shot('catalog-ru-light-1440');
+  await cdp('Emulation.setDeviceMetricsOverride',{width:1024,height:1000,deviceScaleFactor:1,mobile:false});await shot('catalog-ru-light-1024');
+  await cdp('Page.navigate',{url:url+'recipes/lecture-outline/1.0.0/'});await wait("document.querySelector('h1')?.innerText==='Lecture outline'");
   await pass('Static detail exposes full instruction, examples, author, version and hash',"document.body.textContent.includes('Structure a lecture')&&document.body.textContent.includes('Eviction policies')&&document.body.textContent.includes('SHA-256')&&!!document.querySelector('a[download]')");
   await pass('Detail has no horizontal overflow at narrow width','document.documentElement.scrollWidth<=innerWidth');await shot('detail-light-390');
   const href=await ev("document.querySelector('a[download]').href");assert(href.startsWith(url));const download=await(await fetch(href)).json();assert.equal(download.id,'user.lecture-outline');checks.push('Recipe JSON download matches identity');
   const tree=await cdp('Accessibility.getFullAXTree');assert(tree.nodes.some(n=>n.role?.value==='heading'&&n.name?.value==='Lecture outline'));checks.push('Accessible heading and download link are exposed');
-  await cdp('Page.navigate',{url:url+'contribute/'});await wait("document.querySelector('h1')?.textContent==='Share a useful workflow.'");await pass('Submission path links to fork and pull request',"!!document.querySelector('a[href=\"https://github.com/zinverno/veynrel-recipes/compare\"]')&&document.body.textContent.includes('submission.json')");
+  await cdp('Page.navigate',{url:url+'contribute/'});await wait("document.querySelector('h1')?.innerText==='Share a useful workflow.'");await pass('Submission path links to fork and pull request',"!!document.querySelector('a[href=\"https://github.com/zinverno/veynrel-recipes/compare\"]')&&document.body.textContent.includes('submission.json')");
+  await cdp('Emulation.setScriptExecutionDisabled',{value:true});await cdp('Page.navigate',{url});await wait("document.querySelectorAll('[data-recipe]').length===8");
+  await pass('Without JavaScript all static recipe links and both translations remain accessible', "document.querySelectorAll('[data-lang][hidden]').length===0&&document.querySelectorAll('[data-recipe] a[href]').length===16");await shot('catalog-no-js');
   assert(requests.every(r=>r.method==='GET'));assert(browserRequests.every(r=>r.method==='GET'&&!r.hasBody&&r.url.startsWith(url)));assert.equal(errors.length,0,JSON.stringify(errors));checks.push('No browser errors; website serves only GET static resources');status='PASS';
 }catch(e){errors.push(String(e));console.error(e);process.exitCode=1;}
 finally{fs.writeFileSync(`${evidence}/report.json`,JSON.stringify({status,url,checks,screenshots,errors,requests,browserRequests},null,2));socket?.close();child.kill('SIGTERM');server.close();}

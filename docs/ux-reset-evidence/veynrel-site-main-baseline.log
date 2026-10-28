@@ -1,0 +1,5 @@
+
+> validate
+> node scripts/validate-catalog.mjs
+
+Validated 8 catalog entries, schemas, paths, operations, examples and SHA-256.
